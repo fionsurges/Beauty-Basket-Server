@@ -24,6 +24,9 @@ exports.seed = function(knex, Promise) {
           type: 'Haircare',
           expiration_date: '2019-07-01'
         }
-      ]);
-    });
-};
+      ])
+    })
+    .then(() => {
+      return knex.raw('ALTER SEQUENCE basket_id_seq RESTART with 4')
+    })
+}
