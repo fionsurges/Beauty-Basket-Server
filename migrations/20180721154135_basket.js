@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
         table.text('brand')
         table.text('type')
         table.date('expiration_date')
+        table.text('imageURL')
         table.timestamp('date_added').notNullable().defaultTo(knex.raw('now()'))
     })
 };
